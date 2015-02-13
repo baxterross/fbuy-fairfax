@@ -3,7 +3,47 @@ body {
 }
 
 header {
-  padding: 19px 0 18px;
   position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 19px 0 18px;
   z-index: 3;
+}
+
+main {
+  margin: 58px 0 67px;
+  padding: 48px 0;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 28px 0 24px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.teaser {
+  padding: 35px;
+}
+  .teaser h1 {
+    font-size: 60px;
+    line-height: 60px;
+    margin: 0 0 15px;
+  }
+  .teaser h2 {
+    font-size: 28px;
+    line-height: 38px;
+    margin: 0;
+  }
+  .teaser .note {
+    font-size: 14px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+.form {
+  
 }

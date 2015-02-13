@@ -9,6 +9,20 @@
 
 */
 
-header {
+header, footer {
   background: #0732a2;
+  color: #fff;
+}
+
+.teaser {
+  background: #e6ebf6;
+}
+  .teaser h1 {
+    color: #aeb4b6;
+  }
+  .teaser h2, .teaser .note {
+    color: #4e595d;
+  }
+.form {
+  
 }
