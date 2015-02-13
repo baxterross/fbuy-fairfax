@@ -1,0 +1,545 @@
+/*  ==============================================
+
+Main blue: #0732a2
+button blue: #2d5be3
+section blue: #e6ebf6
+link blue: #2d5be3
+text blue, dark background: #4e595d
+input background: #efeff4
+
+============================================== */
+
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+}
+
+h4,
+a,
+.color-text,
+.button-dark,
+ul.nav li a:hover,
+ul.nav li.active a,
+.featured .event-recap div h3,
+.plan-price,
+.program table thead td h3,
+ul.downloads li a:hover,
+ul.downloads li a i,
+ul.nav li:hover > a,
+.teaser .text-container h1 {
+	color: #2d5be3;
+}
+
+.color-background,
+.button-dark:hover,
+.flex-control-paging li a.flex-active,
+.featured h2,
+.featured form input[type="submit"],
+.featured a.event-button,
+.testimonials .testimonial:hover .bubble,
+.tumblr_posts .tumblr_quote_post:hover .tumblr_quote,
+.plan .plan-title,
+.button-row a,
+.program table:hover thead td,
+.register form input[type="submit"],
+.contact form input[type="submit"],
+.social li a:hover,
+.feature:hover .icon-container {
+	background: #0732a2;
+}
+
+.checkbox-on .checkbox-placeholder,
+.gallery .image-container a,
+.prices a.ticket-button {
+	background-color: #0732a2;
+}
+
+.checkbox-on .checkbox-placeholder {
+	background-color: #0732a2;
+}
+
+.featured form input[type="submit"]:hover,
+.featured a.event-button:hover,
+.prices .ticket:hover a.ticket-button,
+.register form input[type="submit"]:hover,
+.contact form input[type="submit"]:hover {
+	background: #8b1022;
+}
+
+.testimonials .testimonial:hover .bubble:after, .tumblr_posts .tumblr_quote_post:hover .tumblr_quote:after {
+	border-top-color: #0732a2;
+}
+
+/* =========== Style Overrides ============ */
+h1 {
+	font-weight: bold;
+	letter-spacing: -0.05rem;
+	font-size: 60px;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-top: 0px;
+	margin-bottom: 15px;
+}
+
+h2.no-margin-bottom {
+  color: #000;
+}
+
+strong, .strong {
+	font-weight: 500;
+}
+
+.header, .footer {
+	background: #0732a2;
+	color: #fff;
+}
+.footer {
+  padding: 28px 0 24px;
+	font-size: 11px;
+	text-align: center;
+}
+.footer a {
+  color: inherit;
+}
+.logo {
+	padding-top: 0;
+}
+img.full-width {
+	width: 100%;
+}
+ul.nav li a {
+	line-height: 90px;
+	font-weight: bold;
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: #0732a2;
+}
+
+ul.nav li a:hover,
+ul.nav li.active a {
+	background: #0732a2;
+	color:#d4d4d4;
+}
+ul.info {
+	list-style-type: square;
+	font-size: 20px;
+	line-height: 26px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	margin-bottom: 30px;
+}
+ul.info li {
+	margin: 15px 0;
+}
+.teaser {
+	background: #EDECEC url(../images/spartanup-bg.png) no-repeat center center;
+}
+
+.teaser h1.bio {
+	letter-spacing: -0.08rem;
+	font-size: 32px;
+}
+
+.teaser img {
+	margin: 50px 0;
+}
+
+.teaser h2 {
+	margin: 15px 0;
+}
+
+.featured {
+	margin-top: -355px;
+}
+
+.featured h2 {
+	border-radius: 0;
+}
+
+.featured form, .featured .event-recap {
+	border-radius: 0;
+}
+
+.featured form input[type="submit"], .button-dark, .button-light, .featured a.event-button {
+	box-shadow: inset 0px -4px 0px rgba(0,0,0,0.3);
+	padding: 12px 20px 18px 20px;
+	border-radius: 3px;
+}
+
+.featured form input[type="submit"], .featured a.event-button {
+	padding: 5px 20px 10px 20px;
+}
+
+
+.featured .event-recap img, .teaser img {
+	width: 100%;
+	height: auto;
+}
+
+.center {
+float: left;
+}
+.social li a {
+-webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+     -o-border-radius: 3px;
+        border-radius: 3px;
+}
+
+.social li a.social-button-google-plus,
+.social li a.social-button-twitter,
+.social li a.social-button-facebook {
+	color: white;
+}
+
+.social li a.social-button-google-plus:hover,
+.social li a.social-button-twitter:hover,
+.social li a.social-button-facebook:hover {
+	color: #0732a2;
+	background-color: white;
+}
+
+.social li a.social-button-google-plus {
+	background-color: #D34836 ;
+}
+
+.social li a.social-button-envelope {
+  color: #fff;
+  background-color: #0732a2;
+}
+.social li a.social-button-envelope:hover {
+  color: #0732a2;
+  background-color: #fff;
+}
+.social li a.social-button-envelope.active {
+  color: #0732a2;
+  background-color: #fff;
+}
+
+.social li a.social-button-facebook {
+	background-color: #3B5999;
+}
+.social li a.social-button-facebook:hover {
+  background-color: #fff;
+}
+.social li a.social-button-facebook.active {
+  color: #0732a2;
+  background-color: #fff;
+}
+
+.social li a.social-button-twitter {
+	background-color: #4099FF;
+}
+.social li a.social-button-twitter:hover {
+  background-color: #fff;
+}
+.social li a.social-button-twitter.active {
+  color: #0732a2;
+  background-color: #fff;
+}
+
+.social li a i {
+	color: inherit;
+}
+
+.color-background h2 {
+	margin-bottom: 0;
+}
+
+.dark-gray-background h2 {
+	color: #ffffff;
+	margin: 0px;
+	font-weight: 700;
+}
+
+.dark-gray-background .container {
+	padding: 25px 0 30px 0;
+}
+
+.white-background p {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+
+span.smaller {
+	font-size: smaller;
+}
+
+.leading-md {
+	margin-bottom: 20px;
+}
+
+.trailing-md {
+	margin-top: 20px;
+}
+
+.tumblr_source strong {
+	font-size: 20px;
+	line-height: 30px;
+	color: #333333;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	margin-bottom: 20px;
+	display: block;
+}
+
+.tumblr_source {
+	margin-top: 20px;
+	width: 100%;
+	display: inline-block;
+}
+
+.tumblr_source p {
+	display: none;
+}
+
+.tumblr_source p:first-of-type {
+	display: block;
+}
+
+p.instruction, h2.top-caption, h3.top-caption {
+	margin-bottom: 0;
+}
+
+body.fixed-nav .teaser-section {
+	margin-top: 60px;
+}
+
+body.fixed-nav #race {
+	margin-top: 94px;
+
+}
+.modal-dialog {
+	width: 600px;
+	margin: 10rem auto auto auto;
+}
+
+@media (min-width: 978px) and (max-width: 1199px) {
+
+	h1 {
+	  font-size: 40px;
+	}
+
+	.facebook-info {
+	  color: #fff;
+	  font-size: 14px;
+	  width: 100%;
+	  float: right;
+	  margin-top: 20px;
+	}
+
+	.facebook-img {
+  	width: 100%;
+	}
+
+}
+
+@media (max-width: 992px){
+
+	h1 {
+  	font-size: 40px;
+	}
+
+	h2 {
+	  font-size: 20px;
+	  line-height: 24px;
+	}
+
+	.feature-title {
+	  font-size: 20px;
+	  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+	}
+
+	.facebook-info {
+	  color: #fff;
+	  font-size: 14px;
+	  width: 100%;
+	  float: right;
+	  margin-top: 20px;
+	}
+
+	.facebook-img {
+	width: 100%;
+	}
+
+	.twitter-form {
+	height: 500px;
+	}
+
+	.facebook-form {
+	height: 740px;
+	}
+
+}
+
+@media (max-width: 768px){
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .facebook-img {
+  width: 100%;
+  }
+
+  .text-container {
+    margin-top: 7px;
+    margin-right: 16px;
+    margin-bottom: 28px;
+    margin-left: 16px;
+    padding: 35px;
+  }
+
+  .facebook-form {
+    height: 800px;
+  }
+}
+
+@media (max-width: 480px){
+
+	h1 {
+	  font-size: 36px;
+	}
+
+	h2 {
+	  font-size: 20px;
+	  line-height: 24px;
+	}
+
+	h2.no-margin-bottom {
+  	margin-left: 15px;
+	}
+
+	.feature-title {
+	  font-size: 20px;
+	}
+
+	.facebook-info {
+	  color: #fff;
+	  font-size: 14px;
+	  width: 100%;
+	  float: right;
+	  margin-top: 20px;
+	}
+
+	.fine {
+	  font-size: 12px;
+	  font-style: italic;
+	  font-weight: bold;
+	  line-height: 14px;
+  }
+
+	.facebook-img {
+  	width: 100%;
+	}
+
+	.text-container {
+	  margin-top: 7px;
+	  margin-right: 16px;
+	  margin-bottom: 28px;
+	  margin-left: 16px;
+	  padding: 35px;
+	}
+
+	.twitter-form {
+	height: 600px;
+	}
+
+	.email-form {
+	height: 600px;
+	}
+
+	.facebook-form {
+	height: 800px;
+	}
+
+}
+
+/*typography*/
+
+.feature-title {
+  font-size: 30px;
+  font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+}
+
+.info {
+color: #fff;
+font-size: 14px;
+}
+
+.facebook-info {
+color: #fff;
+font-size: 14px;
+width: 240px;
+float: right;
+/*margin-top: -80px;*/
+}
+
+.input {
+  font-size:12px;
+}
+
+.fine {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.text-container {
+  margin-top: 7px;
+  padding: 35px;
+  background: #e6ebf6;
+  color: #4e595d
+}
+.text-container h1 {
+  color: #aeb4b6;
+}
+
+/*buttons*/
+.button-light, .button-dark {
+	color: #ffffff;
+	padding: 12px 30px 12px 30px;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  width: 100%;
+	float: right;
+}
+
+.button-light {
+	background: #19A7E2;
+}
+.button-light:hover {
+	background: #0A98D3;
+}
+
+.button-dark {
+  background: #3C5A98;
+}
+.button-dark:hover {
+  background: #2D4B89;
+}
+
+/*form*/
+.featured {
+margin-top: 5px;
+}
+
+.confirmation-form {
+height: 450px;
+}
+
+/*images*/
+.teaser-section {
+  background: #fff;
+}
+
+.facebook-img {
+  width: 140px;
+  margin-bottom: 30px
+}
