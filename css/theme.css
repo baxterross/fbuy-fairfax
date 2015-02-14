@@ -1,14 +1,3 @@
-/*
-
-  main blue: #0732a2
-  button blue: #2d5be3
-  section blue: #e6ebf6
-  link blue: #2d5be3
-  text blue, dark background: #4e595d
-  input background: #efeff4
-
-*/
-
 header, footer {
   background: #0732a2;
   color: #fff;
@@ -46,10 +35,11 @@ button:hover {
   .widget h2 {
     color: #aeb4b6;
   }
-  .widget form input, .widget form textarea {
-    background-color: #efeff4;
-    color: #4e595d;
-  }
   .widget .note {
     color: #aeb4b6;
   }
+
+form input, .widget form textarea {
+  background-color: #efeff4;
+  color: #4e595d;
+}
