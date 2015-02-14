@@ -14,6 +14,18 @@ header, footer {
   color: #fff;
 }
 
+a {
+  color: #2d5be3;
+}
+button {
+  background: #3c5a98;
+  color: #fff;
+}
+button:hover {
+  background: #2d4b89;
+  color: #fff;
+}
+
 .teaser {
   background: #e6ebf6;
 }
@@ -34,8 +46,10 @@ header, footer {
   .widget h2 {
     color: #aeb4b6;
   }
-  
   .widget form input, .widget form textarea {
     background-color: #efeff4;
     color: #4e595d;
+  }
+  .widget .note {
+    color: #aeb4b6;
   }
