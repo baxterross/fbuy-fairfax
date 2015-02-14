@@ -1,0 +1,50 @@
+.social-icons {
+  margin-left: 0;
+  padding-left: 0;
+}
+  .social-icons ul {
+    margin: 0;
+    padding: 0;
+  }
+  .social-icons li {
+    list-style: none;
+    display: block;
+    float: left;
+    margin-right: 10px
+  }
+  .social-icons a {
+    text-decoration: none;
+  }
+  .social-icons i {
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    line-height: 32px;
+    height: 32px;
+    width: 32px;
+    border-radius: 3px;
+  }
+  .social-icons .envelope {
+    background: #0732a2;
+    color: #fff;
+  }
+  .social-icons .envelope.active, .social-icons .envelope:hover {
+    background: #fff;
+    color: #0732a2;
+  }
+  .social-icons .facebook {
+    background: #3b5999;
+    color: #fff;
+  }
+  .social-icons .facebook.active, .social-icons .facebook:hover {
+    background: #fff;
+    color: #3b5999;
+  }
+  .social-icons .twitter {
+    background: #4099ff;
+    color: #fff;
+  }
+  .social-icons .twitter.active, .social-icons .twitter:hover {
+    background: #fff;
+    color: #4099ff;
+  }

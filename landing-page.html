@@ -58,43 +58,57 @@
 
     <main>
       <div class="container">
-          <div class="row">
-              <div class="col-sm-6 teaser">
-                <h1 class="fb-malleable">GET A FREE SPARTAN TEE!</h1>
-                <h2>We've made it easy to recruit friends to join you as you crawl through mud, climb walls and hurl spears! Simply share the links and once a friend signs up, we'll send you an exclusive Spartan reward.</h2>
-                <p class="note">*Please note, registration must come through shared link for you to be eligible for reward. </p>
-                <p class="note">*Offer valid for Continental U.S. races only (excludes Hawaii, Alaska) </p>
-              </div>
-              <div class="col-sm-5 col-sm-push-1 form">
-              <!-- ==============================================
-              Featured Box
-              =============================================== -->
-                  <div class="widget-state" data-fbuy-state="Email Message">
-                      <h2 class="feature-title fb-malleable" data-fbuy-fixed-width="">SHARE WITH EMAIL<br/></h2>
+        <div class="row">
+          <div class="col-sm-6 teaser">
+            <h1 class="fb-malleable">GET A FREE SPARTAN TEE!</h1>
+            <h2>We've made it easy to recruit friends to join you as you crawl through mud, climb walls and hurl spears! Simply share the links and once a friend signs up, we'll send you an exclusive Spartan reward.</h2>
+            <p class="note">*Please note, registration must come through shared link for you to be eligible for reward. </p>
+            <p class="note">*Offer valid for Continental U.S. races only (excludes Hawaii, Alaska) </p>
+          </div>
+          <div class="col-sm-5 col-sm-push-1 widget">
+
+                  <div class="widget-state row" data-fbuy-state="Email Message">
+                    <h1 class="fb-malleable col-xs-12">SHARE WITH EMAIL</h1>
+                    <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they sign up, we'll ship you a tee.</h2>
+
+                    <div class="col-xs-12">
+                      <div class="social-icons clearfix">
+                        <ul>
+                          <li>
+                            <a data-fbuy-tostate="Email Message" href="#">
+                              <i class="fa fa-envelope envelope active"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a data-fbuy-tostate="Facebook Message" href="#">
+                              <i class="fa fa-facebook facebook"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a data-fbuy-tostate="Twitter Message" href="#">
+                              <i class="fa fa-twitter twitter"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="validation-error"></div>
+
                       <form action="send-mail.php" class="email-form" method="post">
-                          <p class="fb-malleable">Share this link with your friends. If they sign up, we'll ship you a tee.</p>
+                        <input class="input fb-malleable" data-fbuy-save-placeholder="" id="fb-email-to" name="name" placeholder="To" type="text"/><span class="tooltip">?<p class="info hidden"><span class="fb-malleable">Input comma-separated emails or import your</span> <a class="cs_import no-elc"><span class="fb-malleable">address book</span></a>.</p></span>
+                        <input class="input fb-malleable" data-fbuy-save-placeholder="" id="fb-email-from" name="email" placeholder="From" type="text"/>
+                        <textarea class="input fb-malleable" id="fb-email-body" name="message">I'm running a Spartan Race and I want you to Spartan Up with me! Sign up using this link.</textarea>
 
-                          <div class="nav clearfix">
-                              <ul class="center social">
-                                  <li class="share-icons"><a class="social-button-twitter" data-fbuy-tostate="Twitter Message" href="#"><i class="fa fa-twitter"></i></a></li>
-                                  <li class="share-icons"><a class="social-button-facebook" data-fbuy-tostate="Facebook Message" href="#"><i class="fa fa-facebook"></i></a></li>
-                                  <li class="share-icons"><a class="social-button-envelope active" data-fbuy-tostate="Email Message" href="#"><i class="fa fa-envelope"></i></a></li>
-                              </ul>
-                          </div>
-
-                          <span class="validation-error"></span>
-
-                          <input class="input fb-malleable" data-fbuy-save-placeholder="" id="fb-email-to" name="name" placeholder="To" type="text"/><span class="tooltip">?<p class="info hidden"><span class="fb-malleable">Input comma-separated emails or import your</span> <a class="cs_import no-elc"><span class="fb-malleable">address book</span></a>.</p></span>
-                          <input class="input fb-malleable" data-fbuy-save-placeholder="" id="fb-email-from" name="email" placeholder="From" type="text"/>
-                          <textarea class="input fb-malleable" id="fb-email-body" name="message">I'm running a Spartan Race and I want you to Spartan Up with me!  Sign up using this link.</textarea>
-
-                          <a class="button-dark button-float" href="" id="fb-email-send"><i class="fa fa-envelope"></i> | SEND</a>
-
-                          <div class="powered-by-container">
-                              <p class="powered-by-friendbuy fine">powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a></p>
-                          </div>
+                        <a class="button-dark" href="" id="fb-email-send">
+                          <i class="fa fa-envelope"></i> | SEND
+                        </a>
 
                       </form>
+
+                      <p class="note">
+                        powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a>
+                      </p>
+                    </div>
                   </div>
 
                   <div class="widget-state" data-fbuy-state="Facebook Message" style="display: none">
@@ -195,9 +209,8 @@
                       </form>
                   </div>
 
-              </div>
-              <!-- End Featured Box -->
           </div>
+        </div>
       </div>
     </main>
 

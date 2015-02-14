@@ -1,3 +1,6 @@
+@import 'tooltips.css';
+@import 'social.css';
+
 body {
 	font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
 }
@@ -24,18 +27,29 @@ footer {
   font-size: 11px;
 }
 
+h1, h2 {
+  margin: 0;
+}
+*[class*="col-"] {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+.row {
+  margin-left: -35px;
+  margin-right: -35px;
+}
+
 .teaser {
   padding: 35px;
 }
   .teaser h1 {
     font-size: 60px;
     line-height: 60px;
-    margin: 0 0 15px;
+    margin-bottom: 15px;
   }
   .teaser h2 {
     font-size: 28px;
     line-height: 38px;
-    margin: 0;
   }
   .teaser .note {
     font-size: 14px;
@@ -44,6 +58,31 @@ footer {
     font-style: italic;
   }
 
-.form {
+.widget {
   
 }
+  .widget h1 {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-size: 30px;
+    margin-bottom: 17px;
+  }
+  .widget h2 {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 17px;
+  }
+  
+  .widget .validation-error {
+    height: 30px;
+  }
+  
+  .widget form input, .widget form textarea {
+    background: url(../images/icon-right.png) no-repeat 20px center;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 0;
+    padding: 12px 20px 12px 40px;
+    margin-bottom: 30px;
+    width: 100%;
+  }

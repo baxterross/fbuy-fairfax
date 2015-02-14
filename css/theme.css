@@ -23,6 +23,19 @@ header, footer {
   .teaser h2, .teaser .note {
     color: #4e595d;
   }
-.form {
-  
+
+.widget {
+  background: #4e595d;
 }
+  .widget h1 {
+    background: #0732a2;
+    color: #fff;
+  }
+  .widget h2 {
+    color: #aeb4b6;
+  }
+  
+  .widget form input, .widget form textarea {
+    background-color: #efeff4;
+    color: #4e595d;
+  }
