@@ -39,7 +39,7 @@ button:hover {
     color: #aeb4b6;
   }
 
-form input, .widget form textarea {
+.widget form input, .widget form textarea {
   background-color: #efeff4;
   color: #4e595d;
 }
