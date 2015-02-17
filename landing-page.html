@@ -144,7 +144,6 @@
                     <div class="col-sm-5">
                       <img class="facebook-img fb-malleable"
                            src="https://placehold.it/1000x552"
-                           align="left"
                            id="fb-share-image"
                            data-size="140x73"
                            style="width: 100%;" />
@@ -212,7 +211,27 @@
             <div class="widget-state row" data-fbuy-state="Thanks">
               <h1 class="fb-malleable col-xs-12" data-fbuy-fixed-width="">THANKS FOR SHARING!</h1>
               <h2 class="fb-malleable col-xs-12">Once a friend signs up, we will contact you via email.</h2>
+              <h2 class="fb-malleable reward-cta col-xs-12">HOW CAN WE NOTIFY YOU OF YOUR REWARD?</h2>
               <div class="col-xs-12">
+                <div class="validation-error"></div>
+
+                <form action="/handle_email" class="confirmation-form" id="contact-form" method="POST">
+                  <div class="_email_capture">
+                    <input class="input-medium centered fb-malleable" data-fbuy-save-placeholder="" id="fb-thanks-email" name="email" placeholder="Email" type="text" value=""/><span class="tooltip">?<p class="info hidden"><span class="fb-malleable">Input comma-separated emails or import your</span> <a class="cs_import no-elc"><span class="fb-malleable">address book</span></a>.</p></span>
+                    <button id="fb-email-send" type="submit">
+                      SAVE
+                    </button>
+                  </div>
+                </form>
+
+                <div>
+                  <img class="facebook-img fb-malleable"
+                       src="https://placehold.it/1000x552"
+                       id="fb-share-image"
+                       data-size="140x73"
+                       style="width: 100%; margin-top: 30px;" />
+               </div>
+
                 <div class="social-icons clearfix">
                   <ul>
                     <li>
@@ -232,17 +251,6 @@
                     </li>
                   </ul>
                 </div>
-
-                <div class="validation-error"></div>
-
-                <form action="/handle_email" class="confirmation-form" id="contact-form" method="POST">
-                  <div class="_email_capture">
-                    <input class="input-medium centered fb-malleable" data-fbuy-save-placeholder="" id="fb-thanks-email" name="email" placeholder="Email" type="text" value=""/><span class="tooltip">?<p class="info hidden"><span class="fb-malleable">Input comma-separated emails or import your</span> <a class="cs_import no-elc"><span class="fb-malleable">address book</span></a>.</p></span>
-                    <button id="fb-email-send" type="submit">
-                      SAVE
-                    </button>
-                  </div>
-                </form>
 
                 <p class="note text-center">
                   powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a>

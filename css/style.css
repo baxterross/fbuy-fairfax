@@ -89,11 +89,17 @@ button {
   .widget h2 {
     font-size: 22px;
     line-height: 30px;
-    margin-bottom: 17px;
   }
   
+  .widget .reward-cta {
+    padding-top: 17px;
+  }
   .widget .validation-error {
     height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #f00;
   }
   
   .widget form input, .widget form textarea {

@@ -38,6 +38,9 @@ button:hover {
   .widget .note, .widget .post-preview {
     color: #aeb4b6;
   }
+  .widget .validation-error {
+    color: #f00;
+  }
 
 .widget form input, .widget form textarea {
   background-color: #efeff4;
