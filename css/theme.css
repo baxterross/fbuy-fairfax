@@ -35,7 +35,7 @@ button:hover {
   .widget h2 {
     color: #aeb4b6;
   }
-  .widget .note {
+  .widget .note, .widget .post-preview {
     color: #aeb4b6;
   }
 

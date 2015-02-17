@@ -103,3 +103,10 @@ button {
     margin-bottom: 30px;
     width: 100%;
   }
+  
+  .widget .post-preview {
+    margin-bottom: 30px;
+  }
+  .widget .post-preview p {
+    margin: 10px 0;
+  }
