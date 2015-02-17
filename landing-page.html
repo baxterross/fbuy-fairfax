@@ -111,7 +111,7 @@
                     </div>
                   </div>
 
-                  <div class="widget-state row" data-fbuy-state="Facebook Message">
+                  <div class="widget-state row" data-fbuy-state="Facebook Message" style="display: none;">
                     <h1 class="fb-malleable col-xs-12">SHARE WITH FACEBOOK</h1>
                     <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they sign up, we'll ship you a tee.</h2>
 
@@ -120,12 +120,12 @@
                         <ul>
                           <li>
                             <a data-fbuy-tostate="Email Message" href="#">
-                              <i class="fa fa-envelope envelope active"></i>
+                              <i class="fa fa-envelope envelope"></i>
                             </a>
                           </li>
                           <li>
                             <a data-fbuy-tostate="Facebook Message" href="#">
-                              <i class="fa fa-facebook facebook"></i>
+                              <i class="fa fa-facebook facebook active"></i>
                             </a>
                           </li>
                           <li>
@@ -169,30 +169,46 @@
                     </div>
                   </div>
 
-                  <div class="widget-state" data-fbuy-state="Twitter Message" style="display: none">
-                      <h2 class="feature-title fb-malleable" data-fbuy-fixed-width="">SHARE WITH TWITTER</h2>
+                  <div class="widget-state row" data-fbuy-state="Twitter Message">
+                    <h1 class="fb-malleable col-xs-12">SHARE WITH TWITTER</h1>
+                    <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they sign up, we'll ship you a tee.</h2>
+
+                    <div class="col-xs-12">
+                      <div class="social-icons clearfix">
+                        <ul>
+                          <li>
+                            <a data-fbuy-tostate="Email Message" href="#">
+                              <i class="fa fa-envelope envelope"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a data-fbuy-tostate="Facebook Message" href="#">
+                              <i class="fa fa-facebook facebook"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a data-fbuy-tostate="Twitter Message" href="#">
+                              <i class="fa fa-twitter twitter active"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="validation-error"></div>
+
                       <form action="send-mail.php" class="twitter-form" method="post">
-                          <p class="fb-malleable">Share this link with your friends. If they sign up, we'll ship you a tee.</p>
-
-                          <span class="validation-error"></span>
-
-                          <input class="input" name="message" type="text" value="I'm running a @SpartanRace, are you with me? #AROOO"/>
+                          <input class="input fb-malleable" name="message" type="text" value="I'm running a @SpartanRace, are you with me? #AROOO"/>
                           <textarea style="display: none"></textarea>
 
-                          <div class="nav">
-                              <ul class="center social">
-                                  <li class="share-icons"><a class="social-button-twitter active" data-fbuy-tostate="Twitter Message" href="#"><i class="fa fa-twitter"></i></a></li>
-                                  <li class="share-icons"><a class="social-button-facebook" data-fbuy-tostate="Facebook Message" href="#"><i class="fa fa-facebook"></i></a></li>
-                                  <li class="share-icons"><a class="social-button-envelope" data-fbuy-tostate="Email Message" href="#"><i class="fa fa-envelope"></i></a></li>
-                              </ul>
-                          </div>
-                          <a class="button-dark button-float fb-share-network" data-network="twitter" href=""><i class="fa fa-twitter"></i> | TWEET</a>
-
-                          <div class="powered-by-container">
-                              <p class="powered-by-friendbuy fine">powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a></p>
-                          </div>
-
+                          <button class="fb-share-network" data-network="twitter">
+                            <i class="fa fa-twitter"></i> | TWEET
+                          </button>
                       </form>
+
+                      <p class="note text-center">
+                        powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a>
+                      </div>
+                    </div>
                   </div>
 
                   <div class="widget-state" data-fbuy-state="Thanks" style="display: none">
