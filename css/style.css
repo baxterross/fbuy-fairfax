@@ -1,8 +1,9 @@
 @import 'tooltips.css';
 @import 'social.css';
 
-body {
+body, html {
 	font-family: 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif;
+	height: 100%;
 }
 
 header {
@@ -14,17 +15,18 @@ header {
 }
 
 main {
-  margin: 58px 0 67px;
-  padding: 48px 0;
+  /* 48 + 58 */
+  padding-top: 106px;
+  /* 48 + 67 */
+  padding-bottom: 115px;
+  min-height: 100%;
 }
 
 footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
   padding: 28px 0 24px;
   text-align: center;
   font-size: 11px;
+  margin-top: -67px;
 }
 
 h1, h2 {
