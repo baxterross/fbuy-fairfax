@@ -11,7 +11,8 @@
     list-style: none;
     display: block;
     float: left;
-    margin-right: 10px
+    margin-right: 10px;
+    margin-bottom: 14px;
   }
   .social-icons a {
     text-decoration: none;
@@ -49,3 +50,23 @@
     background: #fff;
     color: #4099ff;
   }
+  
+  .purl {
+    margin-top: -3px;
+    white-space: nowrap;
+  }
+  .purl input {
+    position: relative;
+    top: -1px;
+    width: auto;
+    padding: 8px 20px 7px;
+    margin: 0 6px 0 0;
+  }
+  .purl button {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    top: 2px;
+    padding: 3px 12px;
+  }
+
