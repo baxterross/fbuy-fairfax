@@ -80,6 +80,9 @@ button {
 .widget {
   padding-bottom: 10px;
 }
+.widget.col-sm-12 {
+  min-height: 100%;
+}
   .widget h1 {
     padding-top: 17px;
     padding-bottom: 17px;
@@ -92,7 +95,7 @@ button {
   }
   
   .widget .reward-cta {
-    padding-top: 17px;
+    padding-top: 17px;  
   }
   .widget .validation-error {
     height: 30px;
