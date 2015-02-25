@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+{% raw %}
+    <head>
+        <!-- {% set widget_builder_v2_code_hash = "d4b6128a31b9b556c8b48196febdc295" -%} -->
+
+        <!-- {# This approach comes from http://stackoverflow.com/q/10533764 -#} -->
+        <!-- {# See https://friendbuy.atlassian.net/wiki/display/SC/Widget+Builder+v2+Changelog for changelog -#} -->
+        <meta name="Landing Page"
+              content="A Friendbuy widget template."
+              data-widget-version="2.3"
+              data-code-hash="{{ widget_builder_v2_code_hash }}"/>
+
+        <!-- Title and basic Metas -->
+        <meta charset="utf-8"/>
+        <title>Friendbuy: Refer a Friend</title>
+        <meta content="Share this link with your friends. If they join you, we'll reward you." name="description"/>
+        <meta content="Friendbuy" name="author"/>
+
+        <!-- Mobile Metas -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+
+        <!-- CSS -->
+        <link href="//static-friendbuy-com.s3.amazonaws.com/widget/fairfax/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="//static-friendbuy-com.s3.amazonaws.com/widget/fairfax/css/font-awesome.min.css" rel="stylesheet"/>
+        <link href="//static-friendbuy-com.s3.amazonaws.com/widget/fairfax/css/style.css" rel="stylesheet"/>
+        <link href="//static-friendbuy-com.s3.amazonaws.com/widget/fairfax/css/theme.css" rel="stylesheet"/>
+
+        <!-- Fonts -->
+        <link href="//fonts.googleapis.com/css?family=Lato:700,400,400italic,300,300italic,200,200italic,100,100italic" rel="stylesheet" type="text/css"/>
+        <link href="//fast.fonts.com/cssapi/8b998a82-e0cc-42fc-b9c0-bcedae53d8a2.css" rel="stylesheet" type="text/css"/>
+
+        <!-- Favicons -->
+        <link href="/images/favicon.ico" rel="shortcut icon"/>
+        <link href="/images/apple-touch-icon.png" rel="apple-touch-icon"/>
+        <link href="/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+        <link href="/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+
+        <!-- {% if editing_state %} -->
+          <link href="{{ url_for('static', filename='css/widget_in_edit_mode.css') }}" rel="stylesheet" type="text/css"/>
+        <!-- {% endif %} -->
+    </head>
+
+    <body id="top" class="fixed-nav">
+        {% if not editing_state %}{% include 'ga.html' %}{% endif %}
+        {% if not editing_state %}{{ form.hidden_tag() }}{% endif %}
+
+    <!--RUNTIME-STATE-BEGIN-->
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- Logo -->
+            <div class="logo pull-left">
+              <a href="http://www.foursquare.com/">
+                <img alt="logo-foursquare" class="logo" src="/images/foursquare-white.png" width="145" height="20"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm-6 teaser">
+            <h1 class="fb-malleable">YOUR GREAT OFFER!</h1>
+            <h2 class="fb-malleable">Share with your friends to get a great reward..</h2>
+            <p class="fine fb-malleable">*Terms and Conditions apply.</p>
+          </div>
+
+          <div class="col-sm-5 col-sm-push-1 widget">
+            {# Email State -#}
+            <div class="widget-state row" data-fbuy-state="Email Message">
+              <h1 class="fb-malleable col-xs-12">SHARE WITH EMAIL</h1>
+              <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they sign up, we'll ship you a tee.</h2>
+              <div class="col-xs-12">
+                <div class="social-icons clearfix">
+                  <ul>
+                    <li>
+                      <a data-fbuy-tostate="Email Message" href="#">
+                        <i class="fa fa-envelope envelope active"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Facebook Message" href="#">
+                        <i class="fa fa-facebook facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Twitter Message" href="#">
+                        <i class="fa fa-twitter twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="purl">
+                        <input disabled value="http://fbuy.me/something" />
+                        <button class="copy">COPY</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="validation-error"></div>
+
+                <form action="/handle_post" class="email-form" method="post">
+                  <input class="input fb-malleable" data-fbuy-save-placeholder="" id="fb-email-to" name="name" placeholder="To" type="text"/><span class="tooltip">?<p class="info hidden"><span class="fb-malleable">Input comma-separated emails or import your</span> <a class="cs_import no-elc"><span class="fb-malleable">address book</span></a>.</p></span>
+                  <input class="input fb-malleable" data-fbuy-save-placeholder="" id="fb-email-from" name="email" placeholder="From" type="text"/>
+                  <textarea class="input fb-malleable" id="fb-email-body" name="message">Customize Your Message</textarea>
+
+                  <button id="fb-email-send">
+                    <i class="fa fa-envelope"></i> | SEND
+                  </button>
+
+                </form>
+
+                <p class="note text-center">
+                  powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a>
+                </p>
+              </div>
+            </div>
+
+            {# Facebook State -#}
+            <div class="widget-state row" data-fbuy-state="Facebook Message" style="display: none;">
+              <h1 class="fb-malleable col-xs-12">SHARE WITH FACEBOOK</h1>
+              <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they buy, you will get a reward.</h2>
+              <div class="col-xs-12">
+                <div class="social-icons clearfix">
+                  <ul>
+                    <li>
+                      <a data-fbuy-tostate="Email Message" href="#">
+                        <i class="fa fa-envelope envelope"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Facebook Message" href="#">
+                        <i class="fa fa-facebook facebook active"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Twitter Message" href="#">
+                        <i class="fa fa-twitter twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="purl">
+                        <input disabled value="http://fbuy.me/something" />
+                        <button class="copy">COPY</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="validation-error"></div>
+
+                <form action="/handle_post" class="facebook-form" method="post">
+                  <input class="input fb-malleable" type="text" placeholder="Message" id="facebook-input-message" name="message" />
+
+                  <div class="row post-preview">
+                    <div class="col-sm-5">
+                      <img class="facebook-img fb-malleable"
+                           src="https://placehold.it/1000x552"
+                           id="fb-share-image"
+                           data-size="140x73"
+                           style="width: 100%;" />
+                    </div>
+                    <div class="col-sm-7 col-sm-pull-1">
+                      <p class="facebook-info no-bottom-margin fb-malleable" id="fb-share-title">Default Title</p>
+                      <p class="facebook-info fb-malleable" id="fb-share-description">Default Facebook Message</p>
+                    </div>
+                  </div>
+
+                  <textarea style="display: none" id="facebook-textarea-message"></textarea>
+
+                  <button class="fb-share-network" data-network="facebook">
+                    <i class="fa fa-facebook"></i> | SHARE
+                  </button>
+                </form>
+
+                <p class="note text-center">
+                  powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a>
+                </p>
+              </div>
+            </div>
+
+            {# Twitter State -#}
+            <div class="widget-state row" data-fbuy-state="Twitter Message" style="display: none">
+              <h1 class="fb-malleable col-xs-12">SHARE WITH TWITTER</h1>
+              <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they sign up, we'll ship you a tee.</h2>
+              <div class="col-xs-12">
+                <div class="social-icons clearfix">
+                  <ul>
+                    <li>
+                      <a data-fbuy-tostate="Email Message" href="#">
+                        <i class="fa fa-envelope envelope"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Facebook Message" href="#">
+                        <i class="fa fa-facebook facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Twitter Message" href="#">
+                        <i class="fa fa-twitter twitter active"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="purl">
+                        <input disabled value="http://fbuy.me/something" />
+                        <button class="copy">COPY</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="validation-error"></div>
+
+                <form action="/handle_post" class="twitter-form" method="post">
+                    <input class="input fb-malleable" name="message" type="text" value="I'm running a @SpartanRace, are you with me? #AROOO"/>
+                    <textarea style="display: none"></textarea>
+
+                    <button class="fb-share-network" data-network="twitter">
+                      <i class="fa fa-twitter"></i> | TWEET
+                    </button>
+                </form>
+
+                <p class="note text-center">
+                  powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a>
+                </p>
+              </div>
+            </div>
+
+            {# Thanks State -#}
+            <div class="widget-state row" data-fbuy-state="Thanks">
+              <h1 class="fb-malleable col-xs-12" data-fbuy-fixed-width="">THANKS FOR SHARING!</h1>
+              <h2 class="fb-malleable col-xs-12">Once a friend signs up, we will contact you via email.</h2>
+
+              <div class="email-capture clearfix">
+                <h2 class="fb-malleable reward-cta col-xs-12">HOW CAN WE NOTIFY YOU OF YOUR REWARD?</h2>
+                <div class="col-xs-12">
+                  <div class="validation-error"></div>
+
+                  <form action="/handle_email" class="confirmation-form" id="contact-form" method="POST">
+                    <div class="_email_capture">
+                      <input class="input-medium centered fb-malleable" data-fbuy-save-placeholder="" id="fb-thanks-email" name="email" placeholder="Email" type="text" value=""/><span class="tooltip">?<p class="info hidden"><span class="fb-malleable">Input comma-separated emails or import your</span> <a class="cs_import no-elc"><span class="fb-malleable">address book</span></a>.</p></span>
+                      <button id="fb-email-send" type="submit">
+                        SAVE
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-xs-12">
+                <h2 class="fb-malleable share-again">Share Again</h2>
+                <div class="social-icons clearfix">
+                  <ul>
+                    <li>
+                      <a data-fbuy-tostate="Email Message" href="#">
+                        <i class="fa fa-envelope envelope"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Facebook Message" href="#">
+                        <i class="fa fa-facebook facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-fbuy-tostate="Twitter Message" href="#">
+                        <i class="fa fa-twitter twitter"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="purl">
+                        <input disabled value="http://fbuy.me/something" />
+                        <button class="copy">COPY</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <p class="note text-center">
+                  powered by <a alt="FriendBuy" href="http://www.friendbuy.com/" target="new">friendbuy</a>
+                </p>
+              </div>
+            </div>
+
+          </div> <!-- end of col -->
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="fb-malleable">
+              Copyright © 2014 All rights reserved
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+      <!--RUNTIME-STATE-END-->
+
+      <!-- ==============================================
+      JS
+      =============================================== -->
+      {% if not editing_state -%}
+          <script src="/fairfax/js/require.min.js" type="text/javascript"></script>
+          <script src="/fairfax/js/modernizr.js" type="text/javascript"></script>
+          <script src="/fairfax/js/jquery-2.1.3.min.js" type="text/javascript"></script>
+          <script src="/fairfax/js/bootstrap.min.js" type="text/javascript"></script>
+          <script src="/fairfax/js/main.js" type="text/javascript"></script>
+      {%- endif %}
+
+      {% include "v2_js_includes.html" with context -%}
+
+      {% if not editing_state -%}
+      <script type="text/javascript">
+      require(['jquery'], function ($)
+      {
+          var wire_up_textarea = function ($parent_node)
+              {
+                  var $input = $parent_node.find('input'),
+                      $textarea = $parent_node.find('textarea');
+
+                  $textarea.val($input.val());
+                  $input.keyup(function (event)
+                                  {
+                                      $textarea.val($input.val());
+                                  });
+              };
+
+          $.map([$('div[data-fbuy-state="Facebook Message"]'), $('div[data-fbuy-state="Twitter Message"]')], wire_up_textarea);
+
+          {# "This prevents a bug where pressing enter in a form field submits the form and results in a blank white page." -#}
+          $('form').submit(function (event)
+          {
+              event.stopPropagation();
+              event.preventDefault();
+              return false;
+          });
+      });
+      </script>
+      {%- endif %}
+      <script type="text/javascript" src="//static-friendbuy-com.s3.amazonaws.com/widget/builder-v2/js/iframeResizer.contentWindow.min.js"></script>
+      <script type="text/javascript">
+        $(function() {
+          $('span.tooltip').click(function(e) {
+            e.preventDefault();
+            // $('p.info').toggleClass('hidden');
+          }).mouseenter(function(e) {
+            $('p.info').removeClass('hidden');
+          }).mouseleave(function(e) {
+            $('p.info').addClass('hidden');
+          });
+        });
+      </script>
+  </body>
+{% endraw %}
+</html>
