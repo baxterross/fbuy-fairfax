@@ -1,26 +1,39 @@
 (function(window, $) {
   var CopyHandler = function() {
     this.defaultData = 'CopyHandler';
-    this.data = '';
     this.clippy = {};
 
     this.init = function(config) {
-      this.data = config.data || this.defaultData;
-      this.createClippyObject(config);
-//      this.setCopyData(this.data);
+      var button = config.button,
+          offset = button.getBoundingClientRect(),
+          scroll = {
+            x: window.scrollX,
+            y: window.scrollY
+          },
+          scale = 2.75;
+
+      this.createClippyObject({
+        height: button.offsetHeight,
+        width: button.offsetWidth,
+        bottom: -button.offsetHeight * 0.5 * (scale - 1),
+        right: -button.offsetWidth * 0.5 * (scale - 1),
+        scale: scale,
+        data: config.data || this.defaultData,
+        parent: button.parentElement
+      });
     }.bind(this);
 
     this.createClippyObject = function(config) {
       var height = config.height || 14;
       var width = config.width || 110;
-      var top = config.top || 0;
-      var left = config.left || 0;
+      var bottom = config.bottom || 0;
+      var right = config.right || 0;
       var objectAttributes = [
         ['id', 'clippy'],
         ['classid', 'clsid:d27cdb6e-ae6d-11cf-96b8-444553540000'],
         ['width', width],
         ['height', height],
-        ['style', 'opacity: 0; transform: scale('+(config.scale || 1)+'); position: absolute; height: '+height+'px; width: '+width+'px; top: '+top+'px; left: '+left+'px;']
+        ['style', 'opacity: 0; transform: scale('+(config.scale || 1)+'); position: absolute; height: '+height+'px; width: '+width+'px; bottom: '+bottom+'px; right: '+right+'px;']
       ];
       var object = window.document.createElement('object');
       for (var i = 0; i < objectAttributes.length; i++) {
@@ -34,7 +47,7 @@
         ['allowScriptAccess', 'always'],
         ['quality', 'high'],
         ['scale', 'noscale'],
-        ['FlashVars', 'text='+this.data],
+        ['FlashVars', 'text='+config.data],
         ['bgcolor', 'transparent'],
         ['wmode', 'transparent']
       ];
@@ -54,7 +67,7 @@
         ['allowScriptAccess', 'always'],
         ['type', 'application/x-shockwave-flash'],
         ['pluginspage', 'http://www.macromedia.com/go/getflashplayer'],
-        ['FlashVars', 'text='+this.data],
+        ['FlashVars', 'text='+config.data],
         ['bgcolor', 'transparent'],
         ['wmode', 'transparent']
       ];
@@ -66,10 +79,7 @@
       }
       object.appendChild(embed);
 
-      var footer = window.document.getElementsByTagName('footer')[0];
-      var body = window.document.getElementsByTagName('body')[0];
-      var container = body;
-      container.appendChild(object);
+      config.parent.appendChild(object);
 
       this.clippy = object;
     }.bind(this);
@@ -98,20 +108,10 @@
     window.document.querySelector('[data-fbuy-state="Email Message"]').style.display = 'block';
     var copyButtons = document.getElementsByClassName('copy');
     for (var i = 0; i < copyButtons.length; i++) {
-      var button = copyButtons[i];
-      var offset = button.getBoundingClientRect();
-      var scroll = {
-        x: window.scrollX,
-        y: window.scrollY
-      };
-      var scale = 2.75;
       var copyHandler = new CopyHandler();
+      var button = copyButtons[i];
       copyHandler.init({
-        height: button.offsetHeight,
-        width: button.offsetWidth,
-        top: offset.top + scroll.y + (button.offsetHeight * 0.5 * (scale - 1)),
-        left: offset.left + scroll.x + (button.offsetWidth * 0.5 * (scale - 1)),
-        scale: scale
+        button: button
       });
     }
   });

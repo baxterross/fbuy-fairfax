@@ -54,6 +54,7 @@
   .purl {
     margin-top: -3px;
     white-space: nowrap;
+    position: relative;
   }
   .purl input {
     position: relative;
