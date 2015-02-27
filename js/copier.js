@@ -15,7 +15,7 @@
       this.createClippyObject({
         height: button.offsetHeight,
         width: button.offsetWidth,
-        bottom: -button.offsetHeight * 0.5 * (scale - 1),
+        bottom: 0,
         right: -button.offsetWidth * 0.5 * (scale - 1),
         scale: scale,
         data: config.data || this.defaultData,
@@ -33,7 +33,7 @@
         ['classid', 'clsid:d27cdb6e-ae6d-11cf-96b8-444553540000'],
         ['width', width],
         ['height', height],
-        ['style', 'opacity: 0; transform: scale('+(config.scale || 1)+'); position: absolute; height: '+height+'px; width: '+width+'px; bottom: '+bottom+'px; right: '+right+'px;']
+        ['style', 'opacity: 0; transform: scaleX('+(config.scale || 1)+'); position: absolute; height: '+height+'px; width: '+width+'px; bottom: '+bottom+'px; right: '+right+'px;']
       ];
       var object = window.document.createElement('object');
       for (var i = 0; i < objectAttributes.length; i++) {
