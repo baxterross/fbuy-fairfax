@@ -4,23 +4,29 @@
     this.clippy = {};
 
     this.init = function(config) {
-      var button = config.button,
-          offset = button.getBoundingClientRect(),
+      this.button = config.button;
+      var offset = this.button.getBoundingClientRect(),
           scroll = {
             x: window.scrollX,
             y: window.scrollY
           },
+          size = {
+            height: this.button.offsetHeight,
+            width: this.button.offsetWidth
+          },
           scale = 2.75;
 
-      this.createClippyObject({
-        height: button.offsetHeight,
-        width: button.offsetWidth,
+      this.clippy = this.createClippyObject({
+        height: size.height,
+        width: size.width,
         bottom: 0,
-        right: -button.offsetWidth * 0.5 * (scale - 1),
+        right: -(size.width * 0.5 * (scale - 1) - 1),
         scale: scale,
-        data: config.data || this.defaultData,
-        parent: button.parentElement
+        data: config.data || this.defaultData
       });
+      this.button.parentElement.appendChild(this.clippy);
+      $(this.clippy).bind('mouseenter', this.mouseEnter);
+      $(this.clippy).bind('mouseleave', this.mouseLeave);
     }.bind(this);
 
     this.createClippyObject = function(config) {
@@ -79,9 +85,14 @@
       }
       object.appendChild(embed);
 
-      config.parent.appendChild(object);
-
-      this.clippy = object;
+      return object;
+    }.bind(this);
+    
+    this.mouseEnter = function() {
+      $(this.button).addClass('hover');
+    }.bind(this);
+    this.mouseLeave = function() {
+      $(this.button).removeClass('hover');
     }.bind(this);
     
     this.setCopyData = function(text) {

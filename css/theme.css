@@ -10,7 +10,7 @@ button {
   background: #3c5a98;
   color: #fff;
 }
-button:hover {
+button:hover, button.hover {
   background: #2d4b89;
   color: #fff;
 }
