@@ -5,28 +5,24 @@
 
     this.init = function(config) {
       this.button = config.button;
-      var offset = this.button.getBoundingClientRect(),
-          scroll = {
-            x: window.scrollX,
-            y: window.scrollY
-          },
-          size = {
-            height: this.button.offsetHeight,
-            width: this.button.offsetWidth
-          },
+      var value = this.button.parentNode.getElementsByTagName('input')[0].value,
+          height = this.button.offsetHeight,
+          width = this.button.offsetWidth,
           scale = 2.75;
 
       this.clippy = this.createClippyObject({
-        height: size.height,
-        width: size.width,
+        height: height,
+        width: width,
         bottom: 0,
-        right: -(size.width * 0.5 * (scale - 1) - 1),
+        right: -(width * 0.5 * (scale - 1) - 1),
         scale: scale,
-        data: config.data || this.defaultData
+        data: value || this.defaultData
       });
       this.button.parentElement.appendChild(this.clippy);
-      $(this.clippy).bind('mouseenter', this.mouseEnter);
-      $(this.clippy).bind('mouseleave', this.mouseLeave);
+      $(this.clippy).bind({
+        mouseenter: this.mouseEnter,
+        mouseleave: this.mouseLeave
+      });
     }.bind(this);
 
     this.createClippyObject = function(config) {
