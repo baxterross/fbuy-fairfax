@@ -4,8 +4,8 @@
     <head>
         <!-- {% set widget_builder_v2_code_hash = "de4049e7bcafbdb659f283ff5780efd3" -%} -->
 
-        <!-- {# This approach comes from http://stackoverflow.com/q/10533764 -#} -->
-        <!-- {# See https://friendbuy.atlassian.net/wiki/display/SC/Widget+Builder+v2+Changelog for changelog -#} -->
+        <!--  This approach comes from http://stackoverflow.com/q/10533764 -->
+        <!--  See https://friendbuy.atlassian.net/wiki/display/SC/Widget+Builder+v2+Changelog for changelog -->
         <meta name="Fairfax Landing Page"
               content="A Friendbuy widget template."
               data-widget-version="2.4"
@@ -53,7 +53,7 @@
           <div class="col-xs-12">
             <!-- Logo -->
             <div class="logo pull-left">
-              <img alt="logo-foursquare" class="logo fb-malleable" src="http://placehold.it/200x20" height="20"/>
+              <img alt="logo" class="logo fb-malleable" src="http://placehold.it/200x60" height="60"/>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
           </div>
 
           <div class="col-sm-5 col-sm-push-1 widget">
-            <!--{# Email State -#}-->
+            <!-- Email State-->
             <div class="widget-state row" data-fbuy-state="Email Message">
               <h1 class="fb-malleable col-xs-12">SHARE WITH EMAIL</h1>
               <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they sign up, we'll ship you a tee.</h2>
@@ -122,7 +122,7 @@
               </div>
             </div>
 
-            <!--{# Facebook State -#}-->
+            <!-- Facebook State-->
             <div class="widget-state row" data-fbuy-state="Facebook Message" style="display: none;">
               <h1 class="fb-malleable col-xs-12">SHARE WITH FACEBOOK</h1>
               <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they buy, you will get a reward.</h2>
@@ -185,7 +185,7 @@
               </div>
             </div>
 
-            <!--{# Twitter State -#}-->
+            <!-- Twitter State-->
             <div class="widget-state row" data-fbuy-state="Twitter Message" style="display: none">
               <h1 class="fb-malleable col-xs-12">SHARE WITH TWITTER</h1>
               <h2 class="fb-malleable col-xs-12">Share this link with your friends. If they sign up, we'll ship you a tee.</h2>
@@ -219,7 +219,7 @@
                 <div class="validation-error"></div>
 
                 <form action="/handle_post" class="twitter-form" method="post">
-                    <input class="input fb-malleable" name="message" type="text" value="I'm running a @SpartanRace, are you with me? #AROOO"/>
+                    <input class="input fb-malleable" name="message" type="text" value="Default Tweet"/>
                     <textarea style="display: none"></textarea>
 
                     <button class="fb-share-network" data-network="twitter">
@@ -233,7 +233,7 @@
               </div>
             </div>
 
-            <!--{# Thanks State -#}-->
+            <!-- Thanks State -->
             <div class="widget-state row" data-fbuy-state="Thanks" style="display: none">
               <h1 class="fb-malleable col-xs-12" data-fbuy-fixed-width="">THANKS FOR SHARING!</h1>
               <h2 class="fb-malleable col-xs-12">Once a friend signs up, we will contact you via email.</h2>
@@ -328,7 +328,7 @@
           <![endif]-->
       <!--{%- endif %}-->
 
-      <!--{% include "v2_js_includes.html" with context -%}-->
+      {% include "v2_js_includes.html" with context -%}
 
       <!--{% if not editing_state -%}-->
       <script type="text/javascript">
@@ -348,7 +348,7 @@
 
           $.map([$('div[data-fbuy-state="Facebook Message"]'), $('div[data-fbuy-state="Twitter Message"]')], wire_up_textarea);
 
-          /* {# "This prevents a bug where pressing enter in a form field submits the form and results in a blank white page." -#} */
+          /*  "This prevents a bug where pressing enter in a form field submits the form and results in a blank white page." */
           $('form').submit(function (event)
           {
               event.stopPropagation();
